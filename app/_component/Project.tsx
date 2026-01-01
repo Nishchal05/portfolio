@@ -51,7 +51,7 @@ export default function Project() {
       
       {/* Title */}
       <div className="text-center mb-16">
-        <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00e786] via-cyan-400 to-[#00e786]">
+        <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00e786] via-cyan-400 to-[#00e786]">
           Projects
         </h1>
         <div className="mt-4 h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-[#00e786] to-transparent" />

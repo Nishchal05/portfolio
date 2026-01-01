@@ -44,7 +44,7 @@ export default function Skills() {
 
       {/* Title */}
       <div className="relative z-10 text-center">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00e786] via-cyan-400 to-[#00e786] animate-gradient-x">
+        <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00e786] via-cyan-400 to-[#00e786] animate-gradient-x">
           Skills
         </h1>
         <div className="mt-4 h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-[#00e786] to-transparent" />
