@@ -16,8 +16,8 @@ export default function HomePage() {
           <Image 
             src={portfolioface} 
             alt="Nishchal - Portfolio" 
-            width={600}
-            height={700}
+            width={500}
+            height={600}
             priority
             className="relative rounded-2xl shadow-2xl border-2 border-[#00e786]/30 hover:scale-105 transition-transform duration-500 ease-out"
           />
@@ -33,7 +33,7 @@ export default function HomePage() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-6xl font-bold mb-4 leading-tight">
             <span className="text-white">Hello, I'm </span>
             <span className="text-[#00e786] bg-clip-text bg-gradient-to-r from-[#00e786] to-cyan-400">
               Nishchal

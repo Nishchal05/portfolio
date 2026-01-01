@@ -83,9 +83,6 @@ export default function Experience() {
           Experience
         </h1>
         <div className="mt-4 h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-[#00e786] to-transparent" />
-        <p className="mt-6 text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-          Technologies and tools I use to bring ideas to life
-        </p>
       </div>
 
       {/* Experience Cards Grid */}
