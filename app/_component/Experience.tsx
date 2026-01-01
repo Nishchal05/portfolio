@@ -68,7 +68,7 @@ export default function Experience() {
   ];
 
   return (
-    <div className="relative flex flex-col min-h-screen w-full justify-center items-center gap-12 md:gap-20 py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+    <div id="Experience" className="relative flex flex-col min-h-screen w-full justify-center items-center gap-12 md:gap-20 py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
 
       {/* Background Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

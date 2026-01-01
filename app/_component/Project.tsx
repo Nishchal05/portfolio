@@ -47,7 +47,7 @@ export default function Project() {
   ];
 
   return (
-    <div className="relative min-h-screen w-full py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
+    <div id="Project" className="relative min-h-screen w-full py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
       
       {/* Title */}
       <div className="text-center mb-16">

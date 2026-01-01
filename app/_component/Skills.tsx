@@ -33,7 +33,7 @@ export default function Skills() {
   ];
 
   return (
-    <div className="relative flex flex-col min-h-screen w-full justify-center items-center gap-12 md:gap-20 py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+    <div id="Skill" className="relative flex flex-col min-h-screen w-full justify-center items-center gap-12 md:gap-20 py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
 
       {/* Background Blobs (unchanged) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <main className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen w-full p-6 md:p-8 lg:p-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
+    <main id="About" className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen w-full p-6 md:p-8 lg:p-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
       
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute left-10 w-72 h-72 bg-[#00e786] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
@@ -50,16 +50,16 @@ export default function HomePage() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <button className="px-8 cursor-pointer py-3 bg-[#00e786] text-black font-semibold rounded-lg hover:bg-[#00d177] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#00e786]/50">
-              View My Work
+              <a href="#Project">View My Work</a>
             </button>
             <button className="px-8 cursor-pointer py-3 bg-transparent border-2 border-[#00e786] text-[#00e786] font-semibold rounded-lg hover:bg-[#00e786]/10 transform hover:scale-105 transition-all duration-300">
-              Contact Me
+              <a href="#Contact">Contact Me</a>
             </button>
           </div>
           <div className="flex md:hidden gap-6 mt-8 text-gray-400">
-            <span className="hover:text-[#00e786] transition-colors cursor-pointer">GitHub</span>
-            <span className="hover:text-[#00e786] transition-colors cursor-pointer">LinkedIn</span>
-            <span className="hover:text-[#00e786] transition-colors cursor-pointer">Twitter</span>
+            <a href="https://github.com/Nishchal05" className="hover:text-[#00e786] transition-colors cursor-pointer">GitHub</a >
+            <a href="https://www.linkedin.com/in/nishchal-sundan" className="hover:text-[#00e786] transition-colors cursor-pointer">LinkedIn</a >
+            <a href="https://leetcode.com/u/Nishchal05/" className="hover:text-[#00e786] transition-colors cursor-pointer">LeetCode</a >
           </div>
         </div>
       </div>

@@ -7,11 +7,11 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "About Me", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "About Me", href: "#About"},           
+    { label: "Skills", href: "#Skill" },
+    { label: "Experience", href: "#Experience" },
+    { label: "Projects", href: "#Project" },
+    { label: "Contact", href: "#Contact" },
   ];
 
   return (
