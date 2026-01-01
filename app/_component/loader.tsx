@@ -39,7 +39,7 @@ export default function TerminalLoader() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
-      <pre className="text-green-400 font-mono text-sm sm:text-base">
+      <pre className="text-green-400 font-mono text-md sm:text-base">
         {text}
         <span className="animate-pulse">▋</span>
       </pre>
