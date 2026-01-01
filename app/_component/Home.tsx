@@ -45,7 +45,7 @@ export default function HomePage() {
           Full Stack Developer | Automation Developer | AI Integrator | Freelancer
           </p>
           <p className="text-md sm:text-lg lg:text-2xl text-gray-300 leading-relaxed max-w-2xl">
-          I build scalable web solutions with expertise in modern technologies, AI integration, and automation—delivering production-ready applications and driving real-world impact.</p>
+          Full-stack developer with a strong focus on building scalable, production-ready web applications using modern technologies, AI integration, and automation, complemented by solid problem-solving skills and competitive programming experience in C++.</p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8">

@@ -12,10 +12,13 @@ import nodejs from "@/public/nodejs.png";
 import postgresql from "@/public/postgresql.png";
 import reactjs from "@/public/reactjs.png";
 import sql from "@/public/sql.png";
-
+import cpp from "@/public/cpp.png";
+import typescript from "@/public/typescript-768x432-removebg-preview.png";
 export default function Skills() {
   const skills = [
+    {name: "C++", image: cpp},
     { name: "JavaScript", image: Javascript },
+    {name: "TypeScript", image: typescript },
     { name: "Next.js", image: nextjs },
     { name: "React.js", image: reactjs },
     { name: "Node.js", image: nodejs },
