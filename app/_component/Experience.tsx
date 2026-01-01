@@ -6,6 +6,7 @@ export default function Experience() {
       type: "Freelancing",
       responsibility: "Full Stack Developer",
       company: "AlertGroup-Canadian Security Startup",
+      Live_Link: "https://alertgroup.vercel.app/",
       Tech_Stack:
         "Next.js, Node.js, Express.js, Tailwind CSS, MongoDB, Nodemailer, NextAuth.js, GitHub, Vercel",
       details: [
@@ -116,6 +117,14 @@ export default function Experience() {
                 <li key={i}>{point}</li>
               ))}
             </ul>
+            {!experience.Live_Link ? null : (<a
+              href={experience.Live_Link}
+              target="_blank"
+              className="inline-block text-sm text-[#00e786] hover:underline"
+            >
+              🔗 Live Project
+            </a>)}
+            
           </div>
         ))}
       </div>
