@@ -1,4 +1,5 @@
 "use client"
+import Experience from "./_component/Experience";
 import HomePage from "./_component/Home";
 import Navbar from "./_component/Navbar";
 import Sidebar from "./_component/sidebar";
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar/>
       <div className="flex flex-row gap-2.5"><Sidebar/><HomePage/></div>
       <Skills/>
+      <Experience/>
     </div>
   );
 }
