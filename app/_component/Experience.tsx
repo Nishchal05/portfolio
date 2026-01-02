@@ -10,21 +10,24 @@ export default function Experience() {
       Tech_Stack:
         "Next.js, Node.js, Express.js, Tailwind CSS, MongoDB, Nodemailer, NextAuth.js, GitHub, Vercel",
       details: [
-        "Achieved an SEO score of 94 while developing a scalable multi-service security platform",
-        "Implemented secure authentication using Next.js and NextAuth.js with SSR",
-        "Designed a sleek, responsive UI using Tailwind CSS and Shadcn UI",
-        "Integrated Nodemailer for real-time email notifications",
-        "Optimized MongoDB data handling for scalability and low latency",
+        "Developed two fully integrated platforms for AlertGroup: a centralized admin dashboard for internal operations and a user-facing website for customers, ensuring seamless coordination between management and end users.",
+        "Built a secure, scalable multi-service admin system, managing application security, alerts, service configurations, and a built-in helpdesk—achieving an SEO score of 94 for performance and discoverability.",
+        "Implemented robust authentication and authorization using Next.js with NextAuth.js (SSR-based security), enabling secure access control across both admin and user platforms.",
+        "Designed modern, responsive UIs for both systems using Tailwind CSS and Shadcn UI, delivering a clean, intuitive experience for admins and users across all devices.",
+        "Integrated automation and backend optimizations, including Nodemailer for real-time notifications, optimized MongoDB data handling, and end-to-end workflow automation using n8n—covering alerts, order updates, and service management.",
       ],
-    },{
+    },
+    {
       type: "Freelancing",
       responsibility: "Software Developer",
       company: "E-commerce Platform",
       Tech_Stack: "React.js, TailwindCSS, N8N",
       details: [
-        "Built traffic source analytics for ad campaigns",
-        "Developed a bulk-order platform with automated pricing",
-        "Implemented end-to-end workflow automation using n8n",
+        "Built an intelligent traffic analytics system to identify user acquisition sources (Facebook, Google, direct, referrals, etc.), enabling data-driven campaign optimization and smarter marketing decisions.",
+        "Implemented automated bulk order price calculation, dynamically computing total order value based on quantity, pricing rules, and discounts, ensuring accuracy and scalability.",
+        "Designed an automated receipt generation and notification flow, instantly sending detailed order receipts to shoppers for transparency and verification.",
+        "Enabled seller-side order verification and delivery scheduling, allowing shopkeepers to confirm orders and assign precise delivery dates through an automated workflow.",
+        "Developed an end-to-end order management pipeline using n8n, maintaining an updated order list with Order ID, items, pricing, and delivery timelines—ensuring seamless coordination from order placement to delivery.",
       ],
     },
     {
@@ -40,7 +43,7 @@ export default function Experience() {
         "Eliminated manual calculations through automation",
       ],
     },
-    
+
     {
       type: "Freelancing",
       responsibility: "Automation Developer",
@@ -69,8 +72,10 @@ export default function Experience() {
   ];
 
   return (
-    <div id="Experience" className="relative flex flex-col min-h-screen w-full justify-center items-center gap-12 md:gap-20 py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
-
+    <div
+      id="Experience"
+      className="relative flex flex-col min-h-screen w-full justify-center items-center gap-12 md:gap-20 py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden"
+    >
       {/* Background Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00e786] rounded-full blur-3xl opacity-5 animate-blob" />
@@ -117,14 +122,15 @@ export default function Experience() {
                 <li key={i}>{point}</li>
               ))}
             </ul>
-            {!experience.Live_Link ? null : (<a
-              href={experience.Live_Link}
-              target="_blank"
-              className="inline-block text-sm text-[#00e786] hover:underline"
-            >
-              🔗 Live Project
-            </a>)}
-            
+            {!experience.Live_Link ? null : (
+              <a
+                href={experience.Live_Link}
+                target="_blank"
+                className="inline-block text-sm text-[#00e786] hover:underline"
+              >
+                🔗 Live Project
+              </a>
+            )}
           </div>
         ))}
       </div>
