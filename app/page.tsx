@@ -7,6 +7,7 @@ import Skills from "./_component/Skills";
 import Project from "./_component/Project";
 import Contact from "./_component/Contact";
 import RightSidebar from "./_component/rightsidebar";
+import Footer from "./_component/footer";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -16,6 +17,7 @@ export default function Home() {
       <Experience/>
       <Project/>
       <Contact/>
+      <Footer/>
     </div>
   );
 }
