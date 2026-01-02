@@ -6,7 +6,7 @@ export default function RightSidebar() {
         <div className="relative">
           <a
             href="mailto:nishchalsundan04@gmail.com"
-            className="relative block text-sm font-medium text-gray-400 hover:text-emerald-400 transition-all duration-300 tracking-[0.2em] uppercase backdrop-blur-sm px-3 py-2 rounded-lg hover:bg-white/5"
+            className="relative block text-xs font-medium text-gray-400 hover:text-emerald-400 transition-all duration-300 tracking-[0.2em] uppercase backdrop-blur-sm px-3 py-2 rounded-lg hover:bg-white/5"
             style={{ writingMode: "vertical-rl" }}
           >
             nishchalsundan04@gmail.com
