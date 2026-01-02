@@ -11,7 +11,7 @@ export default function Sidebar() {
       >
         <GitHub
           sx={{
-            fontSize: 36,
+            fontSize: 32,
             color: "#ffffff",
             transition: "color 0.3s",
             ".group:hover &": {
@@ -27,7 +27,7 @@ export default function Sidebar() {
       >
         <LinkedInIcon
           sx={{
-            fontSize: 36,
+            fontSize: 32,
             color: "#ffffff",
             transition: "color 0.3s",
             ".group:hover &": {
@@ -43,7 +43,7 @@ export default function Sidebar() {
       >
         <CodeIcon
           sx={{
-            fontSize: 36,
+            fontSize: 32,
             color: "#ffffff",
             transition: "color 0.3s",
             ".group:hover &": {
