@@ -27,7 +27,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex w-full text-xl items-center justify-center space-x-1 lg:space-x-2">
+          <div className="hidden md:flex w-full text-lg items-center justify-center space-x-1 lg:space-x-2">
             {navItems.map((item) => (
               <a
                 key={item.label}

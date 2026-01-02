@@ -27,13 +27,13 @@ export default function HomePage() {
         <div className="space-y-6">
           {/* Greeting Badge */}
           <div className="inline-block">
-            <span className="px-4 py-4 bg-[#00e786]/10 border border-[#00e786]/30 rounded-full text-[#00e786] text-sm font-medium backdrop-blur-sm">
+            <span className="px-4 py-4 bg-[#00e786]/10 border border-[#00e786]/30 rounded-full text-[#00e786] text-xs font-medium backdrop-blur-sm">
               Welcome
             </span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
             <span className="text-white">Hello, I'm </span>
             <span className="text-[#00e786] bg-clip-text bg-gradient-to-r from-[#00e786] to-cyan-400">
               Nishchal
@@ -41,10 +41,10 @@ export default function HomePage() {
           </h1>
 
           {/* Description */}
-          <p className="text-md font-bold sm:text-lg lg:text-xl text-[#00e786] leading-relaxed max-w-xl">
+          <p className="text-sm font-bold sm:text-md lg:text-md text-[#00e786] leading-relaxed max-w-xl">
           Full Stack Developer | Automation Developer | AI Integrator | Freelancer
           </p>
-          <p className="text-md sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-md lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
           Full-stack developer with a strong focus on building scalable, production-ready web applications using modern technologies, AI integration, and automation, complemented by solid problem-solving skills and competitive programming experience in C++.</p>
 
           {/* CTA Buttons */}
