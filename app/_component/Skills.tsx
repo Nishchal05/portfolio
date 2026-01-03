@@ -13,6 +13,9 @@ import postgresql from "@/public/postgresql.png";
 import reactjs from "@/public/reactjs.png";
 import sql from "@/public/sql.png";
 import cpp from "@/public/cpp.png";
+import vercel from "@/public/vercel.png";
+import git from "@/public/Git.png";
+import github from "@/public/github.png";
 import typescript from "@/public/typescript-768x432-removebg-preview.png";
 export default function Skills() {
   const skills = [
@@ -27,6 +30,9 @@ export default function Skills() {
     { name: "PostgreSQL", image: postgresql },
     { name: "SQL", image: sql },
     { name: "n8n", image: n8n },
+    {name: "Vercel", image: vercel},
+    {name: "Git", image: git},
+    {name: "Github", image: github},
     { name: "ChatGPT", image: chatgpt },
     { name: "Gemini", image: gemini },
     { name: "Claude", image: claude },
