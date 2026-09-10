@@ -1,65 +1,120 @@
+"use client";
+
 import portfolioface from "@/public/portfolioface.png";
 import Image from "next/image";
+import { ArrowUpRight, Sparkles, Send } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <main id="About" className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen w-full p-6 md:p-8 lg:p-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
-      
+    <main
+      id="About"
+      className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen w-full pt-28 pb-16 px-4 sm:px-6 md:px-10 lg:px-16 bg-gradient-to-b from-black via-zinc-950 to-black overflow-hidden"
+    >
+      {/* Background Glow Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute left-10 w-72 h-72 bg-[#00e786] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-10 w-72 sm:w-96 h-72 sm:h-96 bg-[#00e786] rounded-full blur-[140px] opacity-[0.08] animate-pulse" />
+        <div
+          className="absolute bottom-20 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-cyan-500 rounded-full blur-[140px] opacity-[0.08] animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        />
       </div>
-      <div className="relative z-10 w-full top-15 md:top-10 max-w-md lg:max-w-lg xl:max-w-xl mb-12 lg:mb-0 lg:mr-16">
-        <div className="relative">
-          <div className="absolute top-20 -inset-4 bg-gradient-to-r from-[#00e786] to-cyan-500 rounded-2xl blur-2xl opacity-30"></div>
-          
-          <Image 
-            src={portfolioface} 
-            alt="Nishchal - Portfolio" 
-            width={500}
-            height={600}
-            priority
-            className="relative rounded-2xl shadow-2xl border-2 border-[#00e786]/30 hover:scale-105 transition-transform duration-500 ease-out"
-          />
+
+      {/* Hero Image Container */}
+      <div className="relative z-10 w-full max-w-sm sm:max-w-md lg:max-w-md xl:max-w-lg mb-10 lg:mb-0 lg:mr-12 flex justify-center">
+        <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[420px]">
+          {/* Subtle glowing halo */}
+          <div className="absolute -inset-2 bg-gradient-to-r from-[#00e786] to-cyan-500 rounded-3xl blur-2xl opacity-25 group-hover:opacity-40 transition-opacity" />
+
+          <div className="relative rounded-2xl overflow-hidden border-2 border-[#00e786]/30 shadow-2xl bg-zinc-900/40">
+            <Image
+              src={portfolioface}
+              alt="Nishchal Sundan - Full Stack Developer & AI Integrator"
+              width={450}
+              height={550}
+              priority
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500 ease-out"
+            />
+          </div>
         </div>
       </div>
-      <div className="relative z-10 w-full max-w-2xl flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-4">
-        <div className="space-y-6">
-          {/* Greeting Badge */}
-          <div className="inline-block">
-            <span className="px-4 py-4 bg-[#00e786]/10 border border-[#00e786]/30 rounded-full text-[#00e786] text-xs font-medium backdrop-blur-sm">
-              Welcome
+
+      {/* Hero Bio / Text Content */}
+      <div className="relative z-10 w-full max-w-2xl flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+        <div className="space-y-5">
+          {/* Status Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00e786]/10 border border-[#00e786]/30 text-[#00e786] text-xs font-semibold tracking-wide backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00e786] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00e786]" />
             </span>
+            Available for New Opportunities
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            <span className="text-white">Hello, I'm </span>
-            <span className="text-[#00e786] bg-clip-text bg-gradient-to-r from-[#00e786] to-cyan-400">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+            Hello, I&apos;m{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00e786] via-teal-300 to-cyan-400">
               Nishchal
             </span>
           </h1>
 
-          {/* Description */}
-          <p className="text-sm font-bold sm:text-md lg:text-md text-[#00e786] leading-relaxed max-w-xl">
-          Full Stack Developer | Automation Developer | AI Integrator | Freelancer
+          {/* Subtitle / Focus domains */}
+          <p className="text-sm sm:text-base md:text-lg font-semibold text-[#00e786] leading-snug">
+            Full Stack Developer &bull; Automation Engineer &bull; AI Integrator &bull; C++ Problem Solver
           </p>
-          <p className="text-sm sm:text-md lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
-          Full-stack developer with a strong focus on building scalable, production-ready web applications using modern technologies, AI integration, and automation, complemented by solid problem-solving skills and competitive programming experience in C++.</p>
+
+          {/* Bio Description */}
+          <p className="text-xs sm:text-sm md:text-base text-zinc-300 leading-relaxed max-w-xl">
+            Specialized in building scalable, production-ready web applications using modern full-stack architectures, autonomous AI agents, and event-driven automation pipelines. Proven problem-solving ability backed by 460+ LeetCode problems solved in C++.
+          </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <button className="px-8 cursor-pointer py-3 bg-[#00e786] text-black font-semibold rounded-lg hover:bg-[#00d177] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#00e786]/50">
-              <a href="#Project">View My Work</a>
-            </button>
-            <button className="px-8 cursor-pointer py-3 bg-transparent border-2 border-[#00e786] text-[#00e786] font-semibold rounded-lg hover:bg-[#00e786]/10 transform hover:scale-105 transition-all duration-300">
-              <a href="#Contact">Contact Me</a>
-            </button>
+          <div className="flex flex-col sm:flex-row items-center gap-3.5 pt-2">
+            <a
+              href="#Project"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-[#00e786] text-black font-bold text-sm shadow-lg shadow-[#00e786]/20 hover:bg-[#00d177] hover:shadow-[#00e786]/40 hover:scale-[1.02] transition-all duration-200"
+            >
+              <span>View My Work</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+
+            <a
+              href="#Contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-zinc-900/80 border border-zinc-700/80 text-zinc-200 font-semibold text-sm hover:border-[#00e786] hover:text-[#00e786] hover:bg-zinc-800/60 hover:scale-[1.02] transition-all duration-200"
+            >
+              <span>Contact Me</span>
+              <Send className="w-3.5 h-3.5" />
+            </a>
           </div>
-          <div className="flex md:hidden gap-6 mt-8 text-gray-400">
-            <a href="https://github.com/Nishchal05" className="hover:text-[#00e786] transition-colors cursor-pointer">GitHub</a >
-            <a href="https://www.linkedin.com/in/nishchal-sundan" className="hover:text-[#00e786] transition-colors cursor-pointer">LinkedIn</a >
-            <a href="https://leetcode.com/u/Nishchal05/" className="hover:text-[#00e786] transition-colors cursor-pointer">LeetCode</a >
+
+          {/* Social Links for Mobile & Tablet (<1024px) */}
+          <div className="flex lg:hidden items-center justify-center lg:justify-start gap-5 pt-4 text-xs font-semibold text-zinc-400">
+            <a
+              href="https://github.com/Nishchal05"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#00e786] transition-colors"
+            >
+              GitHub &rarr;
+            </a>
+            <span className="text-zinc-600">&bull;</span>
+            <a
+              href="https://www.linkedin.com/in/nishchal-sundan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#00e786] transition-colors"
+            >
+              LinkedIn &rarr;
+            </a>
+            <span className="text-zinc-600">&bull;</span>
+            <a
+              href="https://leetcode.com/u/Nishchal05/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#00e786] transition-colors"
+            >
+              LeetCode &rarr;
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Send } from "lucide-react";
+import { Send, Mail, Sparkles, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Contact() {
@@ -16,6 +16,9 @@ export default function Contact() {
   // Lock body scroll when form is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [open]);
 
   const handleChange = (
@@ -53,139 +56,168 @@ export default function Contact() {
   };
 
   return (
-    <div>
-      {/* CONTACT FORM */}
-      {open ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md px-4">
-          <form
-            onSubmit={handleSubmit}
-            className="w-full max-w-xl space-y-6 bg-black border border-white/10 rounded-2xl p-8"
-            aria-busy={status === "sending"}
-          >
-            <h2 className="text-2xl font-semibold text-white text-center">
-              Let’s Talk 🚀
-            </h2>
-
-            {/* Name */}
-            <div>
-              <label className="block text-white mb-2">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="John Doe"
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="block text-white mb-2">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="john@example.com"
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
-              />
-            </div>
-
-            {/* Subject */}
-            <div>
-              <label className="block text-white mb-2">Subject</label>
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                placeholder="Project Inquiry"
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-purple-400"
-              />
-            </div>
-
-            {/* Message */}
-            <div>
-              <label className="block text-white mb-2">Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                placeholder="Tell me about your project..."
-                className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white resize-none focus:outline-none focus:border-purple-400"
-              />
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold transition hover:scale-105 disabled:opacity-50"
-            >
-              {status === "sending" ? (
-                "Sending..."
-              ) : (
-                <>
-                  Send Message <Send className="w-5 h-5" />
-                </>
-              )}
-            </button>
-
-            {/* Feedback */}
-            {status === "success" && (
-              <div className="text-green-400 text-center">
-                Message sent successfully! ✅
-              </div>
-            )}
-
-            {status === "error" && (
-              <div className="text-red-400 text-center">
-                Something went wrong. Please try again.
-              </div>
-            )}
-
-            {/* Close */}
+    <div className="w-full">
+      {/* CONTACT FORM MODAL */}
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 overflow-y-auto">
+          <div className="relative w-full max-w-lg my-8 bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-[#00e786]/5">
+            {/* Close Button */}
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="w-full text-gray-400 hover:text-white transition"
+              className="absolute top-5 right-5 text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-zinc-900 transition-colors"
+              aria-label="Close modal"
             >
-              Cancel
+              <X className="w-5 h-5" />
             </button>
-          </form>
-        </div>
-      ) : (
-        /* CONTACT SECTION */
-        <section
-          id="Contact"
-          className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 bg-gradient-to-b from-black via-gray-900 to-black text-center"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#00e786] via-cyan-400 to-[#00e786] bg-clip-text text-transparent">
-            Get In Touch
-          </h1>
 
-          <p className="mt-6 max-w-2xl text-gray-400 text-lg">
-            I am actively seeking new career opportunities where I can
-            contribute, learn, and create real impact. If you have an idea and
-            want to transform it into a real-world solution, I’d love to
-            collaborate. My inbox is always open—whether it’s a job opportunity,
-            a project, or just a connection.
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00e786]/10 border border-[#00e786]/20 text-[#00e786] text-xs font-semibold mb-2">
+                <Sparkles className="w-3 h-3" /> Get In Touch
+              </div>
+              <h2 className="text-2xl font-bold text-white">Let&apos;s Build Together</h2>
+              <p className="text-xs text-zinc-400 mt-1">Have a project, opportunity, or idea? Send me a message.</p>
+            </div>
+
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4"
+              aria-busy={status === "sending"}
+            >
+              {/* Name */}
+              <div>
+                <label className="block text-xs font-medium text-zinc-300 mb-1.5">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Name"
+                  className="w-full px-4 py-2.5 bg-zinc-900/90 border border-zinc-800 rounded-xl text-white text-sm placeholder-zinc-500 focus:outline-none focus:border-[#00e786] focus:ring-1 focus:ring-[#00e786]/40 transition-all"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-xs font-medium text-zinc-300 mb-1.5">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="your.email@example.com"
+                  className="w-full px-4 py-2.5 bg-zinc-900/90 border border-zinc-800 rounded-xl text-white text-sm placeholder-zinc-500 focus:outline-none focus:border-[#00e786] focus:ring-1 focus:ring-[#00e786]/40 transition-all"
+                />
+              </div>
+
+              {/* Subject */}
+              <div>
+                <label className="block text-xs font-medium text-zinc-300 mb-1.5">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  placeholder="Project or Role Discussion"
+                  className="w-full px-4 py-2.5 bg-zinc-900/90 border border-zinc-800 rounded-xl text-white text-sm placeholder-zinc-500 focus:outline-none focus:border-[#00e786] focus:ring-1 focus:ring-[#00e786]/40 transition-all"
+                />
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="block text-xs font-medium text-zinc-300 mb-1.5">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  placeholder="Tell me about your project, timeline, or requirements..."
+                  className="w-full px-4 py-2.5 bg-zinc-900/90 border border-zinc-800 rounded-xl text-white text-sm placeholder-zinc-500 resize-none focus:outline-none focus:border-[#00e786] focus:ring-1 focus:ring-[#00e786]/40 transition-all"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-[#00e786] via-teal-300 to-cyan-400 text-black font-bold text-sm shadow-lg shadow-[#00e786]/20 hover:shadow-[#00e786]/40 transition-all hover:scale-[1.01] disabled:opacity-50 cursor-pointer"
+              >
+                {status === "sending" ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    <span>Send Message</span>
+                    <Send className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+
+              {/* Feedback Notifications */}
+              {status === "success" && (
+                <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium text-center">
+                  Message sent successfully! I will respond promptly. &check;
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-medium text-center">
+                  Something went wrong. Please email directly at nishchalsundan04@gmail.com
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* CONTACT SECTION */}
+      <section
+        id="Contact"
+        className="relative min-h-[85vh] w-full flex flex-col items-center justify-center py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-zinc-950 to-black text-center overflow-hidden"
+      >
+        {/* Glow ambient */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-[#00e786] rounded-full blur-[160px] opacity-[0.07]" />
+        </div>
+
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#00e786]/30 bg-[#00e786]/10 text-[#00e786] text-xs font-semibold tracking-wider uppercase mb-4 backdrop-blur-sm">
+            <Mail className="w-3.5 h-3.5" />
+            Connect With Me
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 mb-4">
+            Let&apos;s Build Something <span className="bg-gradient-to-r from-[#00e786] via-cyan-400 to-[#00e786] bg-clip-text text-transparent">Extraordinary</span>
+          </h2>
+
+          <div className="mt-4 h-1 w-24 mx-auto bg-gradient-to-r from-transparent via-[#00e786] to-transparent rounded-full mb-6" />
+
+          <p className="mt-4 max-w-2xl mx-auto text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed">
+            I am actively seeking software engineering opportunities and impactful freelance collaborations. If you are building high-scale applications, autonomous AI agents, or automation pipelines, let&apos;s discuss how I can contribute.
           </p>
 
-          <button
-            onClick={() => setOpen(true)}
-            className="mt-8 px-8 py-4 rounded-full bg-gradient-to-r from-[#00e786] to-cyan-400 text-black font-semibold hover:scale-105 transition"
-          >
-            Say Hello 👋
-          </button>
-        </section>
-      )}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+            <button
+              onClick={() => setOpen(true)}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#00e786] via-teal-300 to-cyan-400 text-black font-bold text-sm shadow-xl shadow-[#00e786]/20 hover:shadow-[#00e786]/40 hover:scale-105 transition-all duration-200 cursor-pointer"
+            >
+              <span>Say Hello</span>
+              <span className="text-base">&rarr;</span>
+            </button>
+
+            <a
+              href="mailto:nishchalsundan04@gmail.com"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-zinc-900/80 border border-zinc-700/80 text-zinc-300 hover:text-[#00e786] hover:border-[#00e786] font-semibold text-sm transition-all duration-200"
+            >
+              <Mail className="w-4 h-4" />
+              <span>nishchalsundan04@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
